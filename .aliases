@@ -1,0 +1,127 @@
+# Exports
+export PATH="${HOME}/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:"
+export PATH="${PATH}/usr/local/sbin:/opt/bin:/usr/bin/core_perl:/usr/games/bin:"
+export PATH="${HOME}/.local/bin:$PATH"
+
+export PATH="/usr/bin:$PATH"
+export PATH="/usr/local/MATLAB/R2023b/bin:$PATH" 
+# export PATH="/opt/jython/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/lib/jvm/default/lib/server/:/usr/lib/jvm/default/lib:$LD_LIBRARY_PATH"
+
+export GRAILS_HOME="$HOME/app/grails/grails-2.5.5"
+# export GRAILS_HOME="$HOME/app/grails/grails-3.3.11"
+# export GRAILS_HOME="$HOME/app/grails/grails-4.0.10"
+# export GRAILS_HOME="$HOME/app/grails/grails-5.2.4"
+# export GRAILS_HOME="$HOME/app/grails/grails-6.1.1"
+export PATH="$GRAILS_HOME/bin:/usr/bin:$PATH"
+
+# export MANPATH="/usr/local/texlive/2024/texmf-dist/doc/man:$MANPATH"
+# export INFOPATH="/usr/local/texlive/2024/texmf-dist/doc/info"
+
+# export PATH="/usr/local/texlive/2024/bin/x86_64-linux:$PATH"
+# export TEXINPUTS="/usr/local/texlive/2024/texmf-dist//:$TEXINPUTS"
+# export TEXMFHOME="/usr/local/texlive/2024/texmf-dist"
+# Colorful man
+
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
+export PAGER="most"
+
+# SubGraph Vega
+
+export MOZILLA_FIVE_HOME="/usr/lib/xulrunner"
+export PATH="$MOZILLA_FIVE_HOME/bin:$PATH"
+
+# MATLAB configuration
+export MATLAB_HOME="/usr/local/MATLAB/R2023b"
+export PATH="$MATLAB_HOME/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH"
+
+# Example aliases
+alias bashconfig="nano ~/.bashrc"
+# alias ohmybash="nano ~/.oh-my-bash"
+# Aliases
+alias ls="lsd"
+# alias ls="ls --color"
+alias vi="vim"
+alias shred="shred -zf"
+#alias python="python2"
+alias wget="wget -U 'noleak'"
+alias curl="curl --user-agent 'noleak'"
+
+# MATLAB aliases
+alias matlab='matlab -nodisplay'
+alias matlabgui='matlab -desktop'
+
+# PGADMIN4
+alias pgadmin4='(source $HOME/pgadmin-env/bin/activate && pgadmin4 & sleep 3s && xdg-open http://127.0.0.1:5050 && wait)'
+
+# Switch Java
+alias java22='sudo archlinux-java set java-22-openjdk'
+alias java17='sudo archlinux-java set java-17-openjdk'
+alias java11='sudo archlinux-java set java-11-openjdk'
+alias java8='sudo archlinux-java set java-8-openjdk'
+alias java7='sudo archlinux-java set java-7-openjdk'
+
+# Show ip Address
+alias myip="ip -4 addr show | awk '/inet / {split(\$2, a, \"/\"); print a[1]}'"
+
+# Grails
+alias grails='JAVA_HOME=$HOME/app/jvm/zulu-8-openjdk grails'
+# alias grails='JAVA_HOME=$HOME/app/jvm/zulu-11-openjdk grails'
+
+# GroovyConsole
+alias groovyConsole='JAVA_HOME=$HOME/app/jvm/zulu-8-openjdk groovyConsole'
+# alias groovyConsole='JAVA_HOME=$HOME/app/jvm/zulu-11-openjdk groovyConsole'
+
+# Groovy
+alias groovyConsole='JAVA_HOME=$HOME/app/jvm/zulu-8-openjdk groovy'
+# alias groovyConsole='JAVA_HOME=$HOME/app/jvm/zulu-11-openjdk groovy'
+
+# Fetch
+alias fetch='fastfetch'
+
+
+## Comandos
+token() {
+	# Definir función para resaltar títulos
+	resaltar_titulo() {
+	    local titulo="$1"
+    		echo -e "\e[1;33m$titulo\e[0m"
+	}
+
+	# Ruta al archivo en el directorio de inicio del usuario
+	archivo="$HOME/token"
+
+	# Contar el número total de líneas en el archivo
+	total_lineas=$(wc -l < "$archivo")
+
+	# Contador de línea
+	linea=0
+
+	# Leer el archivo línea por línea
+	while IFS= read -r titulo; do
+    		((linea++))
+    	# Verificar si es la última línea
+    		if [ "$linea" -eq "$total_lineas" ]; then
+        		# Resaltar el título del último bloque
+        		resaltar_titulo "$titulo"
+        		# Leer y mostrar línea de texto
+        		read -r texto
+        		echo "$texto"
+        		# No mostrar espacio en blanco después del último texto
+    		else
+        		# Resaltar título
+        		resaltar_titulo "$titulo"
+        		# Leer y mostrar línea de texto
+        		read -r texto
+        		echo "$texto"
+        		# Mostrar espacio en blanco
+        		echo
+        		# Leer y descartar línea en blanco
+        		read -r _
+    		fi
+	done < "$archivo"
+
+}
+
