@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Instalación de paquetes requeridos por pacman
-sudo pacman -Syyu bat lsd vim shred wget curl nano jdk8-openjdk jdk11-openjdk jdk17-openjdk jdk-openjdk groovy texstudio texlive eza chafa lesspipe fzf fastfetch graphviz --noconfirm
+sudo pacman -Syyu bat lsd vim shred wget curl nano jdk8-openjdk jdk11-openjdk jdk17-openjdk jdk-openjdk groovy texstudio texlive eza chafa lesspipe fzf fastfetch graphviz nerd-fonts --noconfirm
 
 ## Creación de carpetas
 mkdir $HOME/app

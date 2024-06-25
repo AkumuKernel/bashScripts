@@ -37,6 +37,10 @@ export MATLAB_HOME="/usr/local/MATLAB/R2023b"
 export PATH="$MATLAB_HOME/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH"
 
+
+# Set default nano
+export EDITOR=nano
+
 # Example aliases
 alias bashconfig="nano ~/.bashrc"
 # alias ohmybash="nano ~/.oh-my-bash"
