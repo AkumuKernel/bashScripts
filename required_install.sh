@@ -64,10 +64,14 @@ tar -zxvf xulrunner-1.9.2.13.en-US.linux-x86_64.tar.bz2 -C /opt/
 ## EXTRA
 # Añadir sugerencias
 #   plugins=( 
+#	archlinux
 #       zsh-autosuggestions
+#	zsh-syntax-highlighting
+#	zsh-bat
+#	copyfile
 #   )
 
-# Añadir Predicciónes
+# Añadir Predicciones
 #  fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 # Añadir Highlight
@@ -77,7 +81,20 @@ tar -zxvf xulrunner-1.9.2.13.en-US.linux-x86_64.tar.bz2 -C /opt/
 #  plugins=(zsh-history-substring-search)
 
 # Añadir powerlevel10k
+# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 # ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# Auto Suggestions
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# Syntax Highlighting
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# You Should Use
+# git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
+
+# Zsh Bat
+# git clone https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
 
 ## Descargas manuales
 echo "OpenJDK 7: https://www.oracle.com/java/technologies/javase/javase7-archive-downloads.html"
