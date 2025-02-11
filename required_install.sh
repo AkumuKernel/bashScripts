@@ -37,23 +37,23 @@ mv zulu11.72.19-ca-jdk11.0.23-linux_x64.tar.gz zulu-11-openjdk && mv zulu-11-ope
 
 # Grails 2.5.5
 wget -P $HOME/app/grails/ https://github.com/grails/grails-core/releases/download/v2.5.5/grails-2.5.5.zip
-unzip $HOME/app/grails/grails-2.5.5.zip
+unzip $HOME/app/grails/grails-2.5.5.zip -d $HOME/app/grails/grails-2.5.5.zip
 
 # Grails 3.3.11
 wget -P $HOME/app/grails/ https://github.com/grails/grails-core/releases/download/v3.3.11/grails-3.3.11.zip
-unzip $HOME/app/grails/grails-3.3.11.zip
+unzip $HOME/app/grails/grails-3.3.11.zip -d $HOME/app/grails/grails-3.3.11.zip
 
 # Grails 4.0.10
 wget -P $HOME/app/grails/ https://github.com/grails/grails-core/releases/download/v4.0.10/grails-4.0.10.zip
-unzip $HOME/app/grails/grails-4.0.10.zip
+unzip $HOME/app/grails/grails-4.0.10.zip -d $HOME/app/grails/grails-4.0.10.zip
 
 # Grails 5.2.4
 wget -P $HOME/app/grails/ https://github.com/grails/grails-core/releases/download/v5.2.5/grails-5.2.5.zip
-unzip $HOME/app/grails/grails-5.2.5.zip
+unzip $HOME/app/grails/grails-5.2.5.zip -d $HOME/app/grails/grails-5.2.5.zip
 
 # Grails 6.2.0
 wget -P $HOME/app/grails/ https://github.com/grails/grails-core/releases/download/v6.2.0/grails-6.2.0.zip
-unzip $HOME/app/grails/grails-6.2.0.zip
+unzip $HOME/app/grails/grails-6.2.0.zip -d $HOME/app/grails/grails-6.2.0.zip
 
 rm -f '$HOME/app/grails/grails-\*\.zip'
 
