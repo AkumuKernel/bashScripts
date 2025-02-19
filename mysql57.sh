@@ -7,8 +7,19 @@ INSTALL_DIR="/opt/mysql57"
 BOOST_DIR="../boost"
 
 # 🔹 1. Instalar dependencias necesarias
-echo "🔹 Instalando dependencias en Arch Linux..."
-sudo pacman -Sy --needed base-devel cmake ncurses openssl openssl-1.1 bison libaio rpcsvc-proto
+echo "🔹 Instalando dependencias en Linux..."
+if command -v apt &> /dev/null; then
+    sudo apt update && sudo apt install -y build-essential cmake libncurses-dev libssl-dev libssl1.1 bison libaio-dev rpcsvc-proto
+elif command -v pacman &> /dev/null; then
+    sudo pacman -Sy --needed base-devel cmake ncurses openssl openssl-1.1 bison libaio rpcsvc-proto
+elif command -v dnf &> /dev/null; then
+    sudo dnf install -y cmake ncurses-devel openssl-devel bison libaio-devel rpcsvc-proto
+elif command -v yum &> /dev/null; then
+    sudo yum install -y cmake ncurses-devel openssl-devel bison libaio-devel rpcsvc-proto
+else
+    echo "❌ Gestor de paquetes no soportado"
+    exit 1
+fi
 
 # 🔹 2. Descargar el código fuente de MySQL 5.7
 echo "🔹 Descargando MySQL $MYSQL_VERSION..."

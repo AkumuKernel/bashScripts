@@ -86,8 +86,9 @@ alias groovyConsole='JAVA_HOME=$HOME/app/jvm/zulu-8-openjdk groovy'
 alias fetch='fastfetch'
 
 # MySQL source code 5.7.44
-alias sqlstart='sudo /opt/mysql57/bin/mysqld --user=root --datadir=/opt/mysql57/data --socket=/opt/mysql57/mysql.sock --skip-grant-tables &'
+alias mysql_start='sudo /opt/mysql57/bin/mysqld --user=root --datadir=/opt/mysql57/data --socket=/opt/mysql57/mysql.sock --skip-grant-tables &'
 alias mysql='/opt/mysql57/bin/mysql --socket=/opt/mysql57/mysql.sock'
+alias mysql_stop='sudo pkill mysqld'
 
 ## Comandos
 token() {
